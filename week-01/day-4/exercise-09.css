@@ -1,0 +1,19 @@
+h1 {
+    font-size: 32px;
+}
+p {
+    border: solid 1px black;
+    margin: 0;
+    display: block;
+    width: 200px;
+    padding: 10px;
+}
+body :nth-child(5):active {
+        background-color: orangered;
+    }
+body :nth-child(2) {
+    border-top: 0px;
+}
+body :last-child {
+    border-bottom: 0px;
+}
