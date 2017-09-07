@@ -1,0 +1,22 @@
+div {
+    width: 350px;
+    height: 255px;
+    border: solid 15px rgb(54,119,239);
+    margin: 10px;
+}
+p {
+    font-size: 35px;
+    font-family: Montserrat;
+    text-align: center;
+    color: white;
+    display: block;
+    box-sizing: border-box;
+    padding-top: 25px;
+}
+.north {
+    background-color: rgb(211,104,104);
+}
+.south {
+    background-color: rgb(164,222,222);
+}
+
