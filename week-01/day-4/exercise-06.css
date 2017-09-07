@@ -1,0 +1,20 @@
+p {
+    width: 136px;
+    height: 136px;
+    border-radius: 86px;
+    background-color: rgb(77,226,210);
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 50px;
+    font-size: 32px;
+    color: white;
+    font-family: Montserrat;
+    display: inline-block;
+    margin: 7px;
+}
+p:first-child {
+    background-color: rgb(153,47,230);
+}
+p:last-child {
+    background-color: rgb(215,167,30);
+}
