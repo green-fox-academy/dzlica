@@ -1,0 +1,22 @@
+h1 {
+    font-size: 40px;
+    color: rgb(238,89,67);
+}
+p:nth-of-type(odd) {
+    color: rgb(105,52,217);
+    font-size: 20px;
+}
+p:nth-of-type(2) {
+    font-size: 14px;
+}
+ul {font-size: 14px;
+}
+ol {
+    list-style: upper-roman;
+    text-decoration: underline;
+    color: rgb(232,67,255);
+}
+ol :last-child {
+    color: black;
+    text-decoration: underline
+}
