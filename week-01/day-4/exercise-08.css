@@ -1,0 +1,20 @@
+p {
+    width: 70px;
+    height: 70px;
+    display: inline-block; 
+    margin: 5px;
+}
+div {
+    border: solid  3px blue;
+    display: inline-block;
+    padding: 15px;
+}
+.second {
+    background-color: orangered;
+}
+.first > p{
+    background-color: blue;   
+}
+.second > p {
+    background-color: purple;
+}
