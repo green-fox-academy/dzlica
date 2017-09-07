@@ -1,0 +1,8 @@
+body :first-child {
+    color: rgb(224,157,40);
+    font-size: 36px;
+}
+body :nth-child(3) {
+    padding-left:20px;
+    line-height: 1%;
+}
