@@ -14,11 +14,15 @@
             </header>
             <article class="box half left">
                 <h2>Személyes adatok</h2>
-                <label class"whitebox" for=“”name”>Név&nbsp;</label> 
-                <input type=text required name=“name”>
+                <label class"whitebox" for=”name”>Név&nbsp;</label> 
+                <input type="text" required name=“name”>
                 
-                <div>Születési év&nbsp;</div>
-                <div>Nemed&nbsp;</div>
+                <p>Születési év&nbsp;</p>
+                <input type="text" placeholder="pl. 1984" maxlength="4">
+                <label for=radio>Nemed</label>
+                <input type="radio" name="gender" value="Nő">nő</input>
+                <input type="radio" name="gender" value="Férfi">férfi</input>
+                
                 <div>Milyen márkát szeretsz?&nbsp;</div>
             </article>
             <article class="box half rigth">
@@ -43,7 +47,7 @@
                     </select>
             </article>
             <article class="box bottom">
-                <div></div>
+                    
             </article>
         </main>
     </form>

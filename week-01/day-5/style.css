@@ -18,6 +18,8 @@ header {
     width: 780px;
     margin: 10px 0;
     border: solid 15px red;
+    font-size: 13px;
+    font-weight: lighter;
 }
 .box {
     background: yellow;
@@ -46,17 +48,21 @@ h2 {
     font-weight: lighter;
     font-size: 20px;
 }
-div {
-    width: 300px;
-    height: 40px;
-}
+
+
 input {
     width: 300px;
     padding: 6px;
-    margin: 0 0;
     display: inline-block;
     content:"&nbsp;"; display:block
 }
 select {
     width: 300px;
+}
+.left :nth-child(5) {
+    width: 100px;
+    padding: 6px;
+}
+p {
+    display: inline-block;
 }
