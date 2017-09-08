@@ -1,0 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background: grey;
+}
+main {
+    background: green;
+}
+header {
+    background: yellow;
+    width: 600px;
+    margin: 10px 0;
+    border: solid 15px red;
+}
+.box {
+    background: yellow;
+    width: 50%;
+    height: 400px;
+    margin: 10px 0;
+    border: solid 15px red;
+}
+.bottom {
+    width: 600px;
+}
+.half {
+    width: 300px;
+    display: inline-block;
+}
