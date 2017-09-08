@@ -50,20 +50,13 @@ div {
     width: 300px;
     height: 40px;
 }
-/*
-.whitebox {
-    display: inline-block;
-    width: 300px;
-    margin: 15px 0;
-    text-align: left;
-    line-height: 0.5rem;
-}
-*/
 input {
     width: 300px;
-    padding: 8px;
-    margin: 8px 0;
+    padding: 6px;
+    margin: 0 0;
     display: inline-block;
-    line-height: 0.5rem;
-    
+    content:"&nbsp;"; display:block
+}
+select {
+    width: 300px;
 }
