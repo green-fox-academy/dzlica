@@ -50,7 +50,7 @@ h2 {
 }
 
 
-input {
+.whitebox input {
     width: 300px;
     padding: 6px;
     display: inline-block;
@@ -60,9 +60,12 @@ select {
     width: 300px;
 }
 .left :nth-child(5) {
-    width: 100px;
+    width: 50px;
+}
+.left input {
     padding: 6px;
 }
-p {
-    display: inline-block;
+.marka p {
+    font-size: 12px;
+    color: rbg(142,138,134,0.5)
 }
