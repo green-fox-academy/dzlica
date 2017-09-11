@@ -7,7 +7,7 @@ public class MultiplicationTable {
         int myNumber = myScanner.nextInt();
         int a = 1;
         while(a <= 15) {
-            System.out.println(myNumber + " + " + a + " = " + a * myNumber);
+            System.out.println(myNumber + " * " + a + " = " + a * myNumber);
             a++;
         }
     }
