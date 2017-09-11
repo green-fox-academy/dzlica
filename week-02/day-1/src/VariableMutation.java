@@ -34,7 +34,8 @@ public class VariableMutation {
         boolean dividable = (j % 3 == 0) || (j % 5 == 0);
         System.out.println(dividable);
         String k = "Apple";
-        k = "AppleAppleAppleApple";
-        System.out.println(k);
+        for ( int i = 0; i<4; i++) {
+            System.out.println(k);
+        }
     }
 }
