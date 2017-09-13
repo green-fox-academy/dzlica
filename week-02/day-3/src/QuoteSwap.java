@@ -7,7 +7,7 @@ public class QuoteSwap {
         for(int i = 0 ; i < list.size() ; i++) {
             System.out.print(list.get(i) + " ");
         }
-        
+
 
 
         // Accidentally I messed up this quote from Richard Feynman.
