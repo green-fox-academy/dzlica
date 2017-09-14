@@ -24,6 +24,7 @@ public class HeWillNever {
 
         for (int i: notSoCrypticMessage) {
             out += hmap.get(i);
+            out = out + " ";
         }
 
         System.out.println(out);
