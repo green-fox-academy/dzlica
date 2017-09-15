@@ -22,17 +22,21 @@ public class Anagram {
 
     public static boolean Anagram(String inputOne, String inputTwo) {
         boolean vissza = true;
+        if (inputOne.length() != inputTwo.length()) {
+            return false;
+        }
         for (int i = 0; i < inputOne.length(); i++) {
             char c = inputOne.charAt(i);
-            for (int j = 0; j < i; j++) {
+            boolean megvan = false;
+            for (int j = 0; j < inputTwo.length(); j++) {
                 char d = inputTwo.charAt(j);
                 if (c == d) {
-                    return true;
-                } else {
-                    return false;
+                    megvan = true;
                 }
             }
-
+            if (megvan == false) {
+                return false;
+            }
         }
         return vissza;
     }
