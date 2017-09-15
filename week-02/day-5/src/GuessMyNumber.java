@@ -3,8 +3,10 @@ import java.util.Scanner;
 public class GuessMyNumber {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int to = 10;
-        int from = 1;
+        System.out.println("What will be the range, give me where to start");
+        int to = scanner.nextInt();
+        System.out.println("What will be the range, give me where to finish");
+        int from = scanner.nextInt();
         int myNumber = (int)(Math.random() * (to - from) + from);
 
         System.out.println("Guess my number!");
