@@ -12,10 +12,10 @@ import java.util.List;
 
 public class WritesSingleLine {
     public static void main(String[] args) {
-        Path myPath = Paths.get("my-file.txt");
         List<String> fileContent = new ArrayList<>();
+        fileContent.add("Magdalena Dzindzisz");
         try {
-            fileContent.add("Magdalena Dzindzisz");
+            Path myPath = Paths.get("my-file.txt");
             Files.write(myPath, fileContent);
             System.out.println(fileContent);
         } catch (Exception e) {
