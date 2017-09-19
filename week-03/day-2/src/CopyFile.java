@@ -22,7 +22,6 @@ public class CopyFile {
                 System.out.println("Same content!");
             }
         } catch (Exception e) {
-            e.printStackTrace();
             System.out.println("Did not copy");
         }
     }
