@@ -15,7 +15,9 @@ public class Doubled {
         try {
             List<String> deCrypt = Files.readAllLines(duplicated);
             List<String> removed = wantToRemove(deCrypt);
-            System.out.println(removed);
+            for(int i = 0; i < removed.size(); i++) {
+                System.out.println(removed.get(i));
+            }
             Files.write(removedChars, removed);
 
         } catch (Exception e) {
@@ -23,13 +25,15 @@ public class Doubled {
         }
     }
     public static ArrayList wantToRemove(List<String> letsDoIt) {
-        ArrayList<String > toReturn = new ArrayList<>(letsDoIt);
+        ArrayList<String > toReturn = new ArrayList<>();
         for (int i = 0; i < letsDoIt.size(); i++) {
-            for (int j = 0; j < i; j++) {
-                if (letsDoIt.size() % 2 == 0) {
-                    toReturn.add(letsDoIt.remove(i));
+            String ujSor = "";
+            for (int j = 0; j < letsDoIt.get(i).length()-1; j++) {
+                if (j % 2 == 0) {
+                    ujSor += letsDoIt.get(i).charAt(j);
                 }
             }
+            toReturn.add(ujSor);
             }
         return toReturn;
 
