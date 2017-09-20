@@ -12,14 +12,17 @@ public class PurpleSteps3d {
         int a = 10;
         int tarolo = a;
         graphics.setColor(Color.MAGENTA);
+
         for (int i = 0; i <= 6; i++) {
             tarolo += i*a;
             graphics.fillRect(tarolo - i*a, tarolo - i*a, i*a, i*a);
         }
-
-
-
-
+        graphics.setColor(Color.BLACK);
+        tarolo = a;
+        for (int j = 0; j <= 6; j++) {
+            tarolo += j*a;
+            graphics.drawRect(tarolo - j*a, tarolo - j*a, j*a, j*a);
+        }
 
     }
 
