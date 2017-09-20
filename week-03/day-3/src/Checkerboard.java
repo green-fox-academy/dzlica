@@ -9,13 +9,18 @@ public class Checkerboard {
     public static void mainDraw(Graphics graphics){
         // fill the canvas with a checkerboard pattern.
 
-        for (int i = 0; i < 10; i ++) {
+        int x = 0;
+        int y = 0;
+
+        for (int i = 0; i < WIDTH; i += WIDTH / 10) {
             graphics.setColor(Color.RED);
-            graphics.fillRect(i * (WIDTH / 10), 0, WIDTH / 10, HEIGHT / 10);
+            graphics.fillRect(i + x, 0, WIDTH / 10, HEIGHT / 10);
+            x += WIDTH / 5;
             }
-        for (int j = 0; j < WIDTH; j += WIDTH / 10) {
+        for (int j = WIDTH / 10; j < WIDTH; j += WIDTH / 10) {
             graphics.setColor(Color.BLACK);
-            graphics.fillRect((WIDTH / 10) + (j * (WIDTH / 10)), 0, WIDTH / 10, HEIGHT / 10);
+            graphics.fillRect(j + y, 0, WIDTH / 10, HEIGHT / 10);
+            y += WIDTH / 5;
 
         }
 
