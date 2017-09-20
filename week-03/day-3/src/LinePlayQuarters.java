@@ -14,7 +14,7 @@ public class LinePlayQuarters {
         int a = WIDTH / 30;
         int b = HEIGHT / 30;
 
-        for (int i = 1; i <= WIDTH; i+= WIDTH / 30) {
+        for (int i = 1; i <= WIDTH / 2; i+= WIDTH / 30) {
             graphics.setColor(Color.MAGENTA);
             graphics.drawLine((WIDTH / 2 + i), 0, WIDTH, i + b);
             graphics.setColor(Color.GREEN);
