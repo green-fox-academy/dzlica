@@ -8,9 +8,17 @@ public class String1 {
     }
 
     private static String lowToUpper(String myString) {
-        if (myString.indexOf("x") == 0) {
-            return myString;
+        String ret = "";
+        if (myString.length() < 1) {
+            return ret;
         }
-        else return myString.replace("x", "Y");
+        if (myString.charAt(0) == 'x') {
+            ret = "y" + lowToUpper(myString.substring(1));
+        } else {
+            ret = myString.charAt(0) + lowToUpper(myString.substring(1));
+        }
+        return ret;
     }
-}
+
+    }
+
