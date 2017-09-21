@@ -12,6 +12,12 @@ public class DrawOnYellow {
         graphics.setColor(Color.YELLOW);
         graphics.fillRect(0, 0, WIDTH, HEIGHT);
 
+        graphics.setColor(Color.BLACK);
+        graphics.drawLine(WIDTH / 3, 0, WIDTH / 3, HEIGHT);
+        graphics.drawLine(2 * WIDTH / 3, 0, 2 * WIDTH / 3, HEIGHT);
+        graphics.drawLine(0, HEIGHT / 3, WIDTH, HEIGHT / 3);
+        graphics.drawLine(0, 2 * HEIGHT / 3, WIDTH, 2 * HEIGHT / 3);
+
 
         drawLine(graphics, WIDTH / 3, 0, WIDTH / 3, HEIGHT, 5);
         drawLine(graphics, 2 * WIDTH / 3, 0, 2 * WIDTH / 3, HEIGHT, 5);
@@ -21,6 +27,7 @@ public class DrawOnYellow {
 
     }
 
+
     private static void drawLine(Graphics graphics, int x, int y, int width, int height, int n) {
 
         if (n == 0) {
@@ -28,6 +35,7 @@ public class DrawOnYellow {
         else {
 
             //drawLine(graphics, x, y, width, height, n-1);
+
             graphics.setColor(Color.BLACK);
             graphics.drawLine(x, y, width, height);
             //drawLine(graphics, x, y, width, height, n-1);
