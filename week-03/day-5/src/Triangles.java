@@ -17,12 +17,27 @@ public class Triangles {
         int[] yPoints = {balfentY, jobbfentY, egeszY};
 
         graphics.drawPolygon(xPoints, yPoints, 3);
-        haromSzog(graphics, xPoints, yPoints, 3, 5);
+        haromSzog(graphics, xPoints, yPoints, balfentX, balfentY, jobbfentX, jobbfentY, egeszY, 3, 5);
     }
 
-    private static void haromSzog(Graphics graphics, int[] xPoints, int[] yPoints, int i, int n) {
+    private static void haromSzog(Graphics graphics, int[] xPoints, int[] yPoints, int balfentX, int balfentY, int jobbfentX, int jobbfentY, int egeszY, int i, int n) {
+        if (n == 0) {
+            return;
+        }
 
+        int feleX = jobbfentX / 2;
+        int negyedX = feleX / 2;
+
+        haromSzog(graphics, xPoints = new int[] {balfentX, jobbfentX, feleX}, yPoints = new int[] {balfentY, jobbfentY, egeszY}, balfentX / 2, balfentY / 2, jobbfentX / 2, jobbfentY / 2, egeszY / 2, 3, n - 1);
+        graphics.drawPolygon(xPoints, yPoints, 3);
+
+        haromSzog(graphics, xPoints = new int[] {feleX, feleX * 2, feleX + negyedX}, yPoints = new int [] {jobbfentY, jobbfentY, egeszY / 2}, balfentX, balfentY, jobbfentX, jobbfentY, egeszY, 3, n - 1);
+        graphics.drawPolygon(xPoints, yPoints, 3);
+
+        haromSzog(graphics, xPoints = new int[] {negyedX, feleX + negyedX, feleX}, yPoints = new int[] {egeszY / 2, egeszY / 2, egeszY}, balfentX, balfentY, jobbfentX, jobbfentY, egeszY, 3, n -1);
+        graphics.drawPolygon(xPoints, yPoints, 3);
     }
+
 
 
     // Don't touch the code below
