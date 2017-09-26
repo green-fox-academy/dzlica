@@ -16,11 +16,11 @@ public class Garden {
 
 
     public void needsWater() {
-        for (int i = 0; i < plants.size(); i++) {
-            if (plants.get(i).waterAmount < plants.get(i).waterneed) {
-                System.out.println("The " + plants.get(i).name + " needs water");
+        for (int i = 0; i < this.plants.size(); i++) {
+            if (this.plants.get(i).waterAmount < this.plants.get(i).waterneed) {
+                System.out.println("The " + this.plants.get(i).name + " needs water");
             }
-            else System.out.println("The " + plants.get(i).name + " doesn't need water");
+            else System.out.println("The " + this.plants.get(i).name + " doesn't need water");
         }
     }
 
@@ -29,13 +29,13 @@ public class Garden {
         System.out.println("Watering with " + water);
         for (int i = 0; i < this.plants.size(); i++) {
             float resultFlower = 0;
-            if (plants.get(i).waterAmount < plants.get(i).waterneed) {
-                resultFlower = plants.get(i).waterAmount + (water / 4) * plants.get(i).increase;
+            if (this.plants.get(i).waterAmount < this.plants.get(i).waterneed) {
+                resultFlower = this.plants.get(i).waterAmount + (water / this.plants.size()) * this.plants.get(i).increase;
             }
-            if (resultFlower < 5) {
-                System.out.println("The " + plants.get(i).name + " needs water");
+            if (resultFlower < this.plants.get(i).waterneed) {
+                System.out.println("The " + this.plants.get(i).name + " needs water");
             }
-            else System.out.println("The " + plants.get(i).name + " doesn't need water");
+            else System.out.println("The " + this.plants.get(i).name + " doesn't need water");
 
         }
     }
