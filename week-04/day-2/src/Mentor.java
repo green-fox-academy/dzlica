@@ -15,7 +15,7 @@ public class Mentor extends Person {
 
     @Override
     public void introduce() {
-        System.out.println("Hi, I1m " + name + ", a " + age + "year old " + gender + level + " mentor");
+        System.out.println("Hi, I'm " + name + ", a " + age + "year old " + gender + " " + level + " mentor");
     }
 }
 
