@@ -6,13 +6,17 @@ public class CountLetters {
 
 
     public CountLetters() {
-        this.letters = letters;
+        //this.letters = letters;
     }
 
-    public Map counting(String letters) {
+    public HashMap counting(String letters) {
         HashMap dictionary = new HashMap();
         for (int i = 0; i < letters.length(); i++) {
-            dictionary.put(letters.charAt(i), dictionary.get(letters.charAt(i) + 1));
+            if (dictionary.get(letters.charAt(i)) == null) {
+                dictionary.put(letters.charAt(i), 1);
+            } else {
+                dictionary.put(letters.charAt(i), (int)dictionary.get(letters.charAt(i)) + 1);
+            }
         }
         return dictionary;
     }
