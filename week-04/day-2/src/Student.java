@@ -1,4 +1,6 @@
-public class Student extends Person {
+import java.lang.Cloneable;
+
+public class Student extends Person implements Cloneable {
     String previousOrganization;
     int skippedDays;
 

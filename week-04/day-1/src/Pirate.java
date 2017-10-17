@@ -3,12 +3,24 @@ import com.sun.tools.internal.ws.wsdl.document.soap.SOAP12Binding;
 public class Pirate {
     int drunk;
     boolean passOut;
+    boolean dead;
 
     public Pirate () {
         this.drunk = 0;
+        this.dead = false;
+        this.passOut = false;
     }
     public void drinkSomeRum() {
-        this.drunk = this.drunk + 50;
+        if (!this.dead) {
+            this.drunk = this.drunk + 50;
+            this.die();
+        }
+    }
+    public void drinkSomeRum(int count) {
+        if (!this.dead) {
+            this.drunk = this.drunk + (count * 50);
+            this.die();
+        }
     }
     public void setPassOut() {
         this.passOut = true;
@@ -24,16 +36,17 @@ public class Pirate {
             this.drunk = 0;
             this.setPassOut();
         }
-
+    }
+    public void die() {
+        if (this.drunk > 400) {
+            System.out.println("He is dead");
+            this.dead = true;
+        }
     }
     public static void main(String[] args) {
         Pirate pirateOne = new Pirate();
         Pirate pirateTwo = new Pirate();
-        pirateOne.drinkSomeRum();
-        pirateOne.drinkSomeRum();
-        pirateOne.drinkSomeRum();
-        pirateOne.drinkSomeRum();
-        pirateOne.drinkSomeRum();
+        pirateOne.drinkSomeRum(4);
         pirateTwo.drinkSomeRum();
         pirateOne.howsItGoingMate();
         pirateTwo.howsItGoingMate();

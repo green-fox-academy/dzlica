@@ -1,12 +1,14 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Profile with forms</title>
-        <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet">        
-    </head>
-    <body>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Profile with forms</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet">
+</head>
+
+<body>
     <form>
         <main>
             <header>
@@ -15,8 +17,8 @@
             <article class="box half left">
                 <h2>Személyes adatok</h2>
                 <div class="whitebox">
-                <label for=”name”>Név&nbsp;</label> 
-                <input type="text" required name=“name”>
+                    <label for=”name”>Név&nbsp;</label>
+                    <input type="text" required name=“name”>
                 </div>
                 <br/>
                 <p>Születési év&nbsp;</p><br/>
@@ -25,49 +27,52 @@
                 <label for=radio>Nemed</label><br/>
                 <input type="radio" name="gender" value="Nő">nő</input>
                 <input type="radio" name="gender" value="Férfi">férfi</input><br/>
-                
-                <div class="marka">Milyen márkát szeretsz?&nbsp;</div><br/>
-                        <input type="checkbox" name="adidas">Adidas</input>
-                        <input type="checkbox" name="apple">Apple</input>
-                        <input type="checkbox" name="cocacola">Coca-Cola</input>
-                        <input type="checkbox" name="mazda">Mazda</input>
-                        <input type="checkbox" name="nike">Nike</input>
-                        <input type="checkbox" name="opel">Opel</input>
-                        <input type="checkbox" name="rayban">Ray-Ban</input>
-                        <input type="checkbox" name="starbucks">Starbucks</input>
-                        <input type="checkbox" name="tesla">Tesla</input>
-                        <input type="checkbox" name="yahoo">Yahoo</input>
-                        <p>Többet is választhatsz</p>
+                <p>Milyen márkát szeretsz?&nbsp;</p>
+                <div class="marka one">
+                    <input type="checkbox" name="adidas">Adidas</input>
+                    <input type="checkbox" name="apple">Apple</input>
+                    <input type="checkbox" name="cocacola">Coca-Cola</input>
+                    <input type="checkbox" name="mazda">Mazda</input>
+                    <input type="checkbox" name="nike">Nike</input>
+                </div>
+                <div class="marka two">
+                    <input type="checkbox" name="opel">Opel</input>
+                    <input type="checkbox" name="rayban">Ray-Ban</input>
+                    <input type="checkbox" name="starbucks">Starbucks</input>
+                    <input type="checkbox" name="tesla">Tesla</input>
+                    <input type="checkbox" name="yahoo">Yahoo</input>
+                </div>
+                <p>Többet is választhatsz</p>
             </article>
             <article class="box half rigth">
                 <h2>Kapcsolat&nbsp;</h2>
                 <div class="whitebox">
-                <label for="phone">Telefonszám&nbsp;</label>
-                <input type="tel" required placeholder="+36 -- --- ---" name="phone">
-                <br/>
-                <label for="email">E-mail-cím&nbsp;</label>
-                <input type="email" required placeholder="nev@domain.hu" name="email">
-                <br/>
-                <label for="facebook">Facebook profilod&nbsp;</label>
-                <input type="url" placeholder="http://facebook.com/..." name="facebook">
-                <br/>
-                <label for="witter">Twitter profilod&nbsp;</label>
-                <input type="url" placeholder="http://twitter.com/.." name="twitter">
-                <br/>
+                    <label for="phone">Telefonszám&nbsp;</label>
+                    <input type="tel" required placeholder="+36 -- --- ---" name="phone">
+                    <br/>
+                    <label for="email">E-mail-cím&nbsp;</label>
+                    <input type="email" required placeholder="nev@domain.hu" name="email">
+                    <br/>
+                    <label for="facebook">Facebook profilod&nbsp;</label>
+                    <input type="url" placeholder="http://facebook.com/..." name="facebook">
+                    <br/>
+                    <label for="witter">Twitter profilod&nbsp;</label>
+                    <input type="url" placeholder="http://twitter.com/.." name="twitter">
+                    <br/>
                 </div>
                 <p>Milyen házban laksz?&nbsp;</p>
-                    <select>
+                <select>
                         <option value="Ház">Ház</option>
                         <option value="Lakás">Lakás</option>
                         <option value="Viskó">Viskó</option>
                     </select>
             </article>
             <article class="box bottom">
-                    
+
             </article>
         </main>
     </form>
-    
+
 </body>
 
 </html>
