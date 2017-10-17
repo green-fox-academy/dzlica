@@ -23,7 +23,10 @@ public class Dominoes {
 //
 //        }
         Collections.sort(dominoes);
-        System.out.println(dominoes);
+        for(Domino d : dominoes) {
+            d.printAllFields();
+        }
+//        System.out.println(dominoes);
     }
 
     static List<Domino> initializeDominoes() {
