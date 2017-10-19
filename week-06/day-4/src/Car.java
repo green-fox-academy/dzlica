@@ -8,9 +8,7 @@ public class Car {
     }
 
     public Car(String[] args) {
-        for (int i = 0; i < 255; i++) {
-            System.out.println(getARandomType() + " : " + getARandomColor());
-        }
+
     }
 
     public enum carTypes {MINI, LANCIA, OPEL, FORD, PEUGEOT}
@@ -23,5 +21,10 @@ public class Car {
 
     public String getARandomColor() {
         return carColors.values()[(int)(Math.random() * (carColors.values().length))].toString();
+    }
+
+    @Override
+    public String toString() {
+        return types + " : " + colors;
     }
 }
