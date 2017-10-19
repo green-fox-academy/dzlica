@@ -34,19 +34,20 @@ public class lottery {
                     CSVReader reader = new CSVReader(new FileReader("/Users/lica/GreenFox/dzlica/week-06/day-3/lotteryfilter/src/main/java/joptsimple/lottery/" + inputFrom));
                 }
                 CSVReader reader = new CSVReader(new FileReader("/Users/lica/GreenFox/dzlica/week-06/day-3/lotteryfilter/src/main/java/joptsimple/lottery/otos.csv"));
+                CSVWriter writer = new CSVWriter(new FileWriter("/Users/lica/GreenFox/dzlica/week-06/day-3/lotteryfilter/src/main/java/joptsimple/lottery/output.csv"));
                 List<String[]> lines = reader.readAll();
                 List<String[]> temp = new ArrayList();
-                if (options.has("o")) {
-                    CSVWriter writer = new CSVWriter(new FileWriter("/Users/lica/GreenFox/dzlica/week-06/day-3/lotteryfilter/src/main/java/joptsimple/lottery/" + outputFrom));
-                    writer.writeAll(temp);
-                    writer.close();
-                }
-                CSVWriter writer = new CSVWriter(new FileWriter("/Users/lica/GreenFox/dzlica/week-06/day-3/lotteryfilter/src/main/java/joptsimple/lottery/output.csv"));
 
                 for (int i = 0; i < lines.size(); i++) {
                     if (lines.get(i)[0].startsWith(year)) {
                         temp.add(lines.get(i));
                     }
+                }
+
+                if (options.has("o")) {
+                    writer = new CSVWriter(new FileWriter("/Users/lica/GreenFox/dzlica/week-06/day-3/lotteryfilter/src/main/java/joptsimple/lottery/" + outputFrom));
+                    writer.writeAll(temp);
+                    writer.close();
                 }
 
                 writer.writeAll(temp);
@@ -56,19 +57,6 @@ public class lottery {
                 System.out.println("Unreadable");
             }
         }
-
-//        if (options.has("f")) {
-//            try {
-//                CSVReader reader = new CSVReader(new FileReader("/Users/lica/GreenFox/dzlica/week-06/day-3/lotteryfilter/src/main/java/joptsimple/lottery/" + inputFrom));
-//                CSVWriter writer = new CSVWriter(new FileWriter("/Users/lica/GreenFox/dzlica/week-06/day-3/lotteryfilter/src/main/java/joptsimple/lottery/output.csv"));
-//                List<String[]> flines = reader.readAll();
-//                writer.writeAll(flines);
-//                writer.close();
-//            } catch (Exception e) {
-//                System.out.println("cannot read");
-//            }
-//        }
-
     }
 }
 
