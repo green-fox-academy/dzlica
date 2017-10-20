@@ -21,15 +21,14 @@ public class TodoListaUj {
     public void Tasks(String[] args) {
         OptionParser parser = new OptionParser();
         parser.accepts("a").withRequiredArg();
-        OptionSet options = parser.parse();
+        OptionSet options = parser.parse(args);
 
 
         if (options.has("a")) {
             try {
                 filePath.ReadFile();
                 List<String> lines = Files.readAllLines(myPath);
-                lines.add(uniqueID.createID() + " " + options.valueOf("a"));
-                System.out.println(String.valueOf(options.valueOf("a")));
+                lines.add(String.valueOf(options.valueOf("a")));
                 Files.write(myPath, lines);
 
             } catch (Exception e) {
