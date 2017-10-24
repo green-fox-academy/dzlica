@@ -15,15 +15,20 @@ public class HelloWebController {
     public AtomicLong loadCounter = new AtomicLong(1);
     String[] hellos = {"Mirëdita", "Ahalan", "Parev", "Zdravei", "Nei Ho", "Dobrý den", "Ahoj", "Goddag", "Goede dag, Hallo", "Hello", "Saluton", "Hei", "Bonjour", "Guten Tag", "Gia'sou", "Aloha", "Shalom", "Namaste", "Namaste", "Jó napot", "Halló", "Helló", "Góðan daginn", "Halo", "Aksunai", "Qanuipit", "Dia dhuit", "Salve", "Ciao", "Kon-nichiwa", "An-nyong Ha-se-yo", "Salvëte", "Ni hao", "Dzien' dobry", "Olá", "Bunã ziua", "Zdravstvuyte", "Hola", "Jambo", "Hujambo", "Hej", "Sa-wat-dee", "Merhaba", "Selam", "Vitayu", "Xin chào", "Hylo", "Sut Mae", "Sholem Aleychem", "Sawubona"};
 
-    //int idx = new Random().nextInt(hellos.length);
-    //String randomHellos = (hellos[idx]);
+    String[] colors = {"blue", "yellow", "red", "black", "pink", "green"};
+    String[] fontSize = {"14", "17", "20", "24"};
 
     @RequestMapping("/web/greeting")
     public String greeting(Model model, @RequestParam("name") String name) {
         model.addAttribute("name", name);
         model.addAttribute("counter", loadCounter.getAndIncrement());
-        int idx = new Random().nextInt(hellos.length);
-        model.addAttribute("hello", (hellos[idx]));
+        int hellosNum = new Random().nextInt(hellos.length);
+        model.addAttribute("hello", hellos[hellosNum]);
+        int colorNum = new Random().nextInt(colors.length);
+        model.addAttribute("szin", colors[colorNum]);
+
+        int fontNum = new Random().nextInt(fontSize.length);
+        model.addAttribute("fonts", fontSize[fontNum]);
         return "greeting";
     }
 
