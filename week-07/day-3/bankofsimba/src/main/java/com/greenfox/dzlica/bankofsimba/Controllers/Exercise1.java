@@ -1,10 +1,10 @@
 package com.greenfox.dzlica.bankofsimba.Controllers;
 
-import com.greenfox.dzlica.bankofsimba.BankAccount;
+import com.greenfox.dzlica.bankofsimba.Model.BankAccount;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 public class Exercise1 {
@@ -15,6 +15,7 @@ public class Exercise1 {
         model.addAttribute("name", myAccount.name);
         model.addAttribute("balance", myAccount.balance);
         model.addAttribute("animalType", myAccount.animalType);
+        model.addAttribute("currency", myAccount.getCurrency());
         return "accounts";
     }
 }
