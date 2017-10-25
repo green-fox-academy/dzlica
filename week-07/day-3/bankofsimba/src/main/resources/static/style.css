@@ -1,10 +1,13 @@
 body {
-    background: yellow;
     font-family: Montserrat;
     background-image: url("lionking.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 table {
+    align-content: center;
+    background: yellow;
     width: 700px;
     border: solid 2px blue;
     font-size: 20px;
