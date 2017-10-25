@@ -12,14 +12,18 @@ import java.util.ArrayList;
 
 @Controller
 public class ListOfAccounts {
+    ArrayList<BankAccount> myAccounts;
 
     private ArrayList<BankAccount> generateAccounts() {
-        ArrayList<BankAccount> someAccount = new ArrayList<>();
-        someAccount.add(new BankAccount("Simba", 2000, "lion", true, false));
-        someAccount.add(new BankAccount("Scar", 5000, "lion", false, true));
-        someAccount.add(new BankAccount("Rafiki", 1300, "mandrill", false, false));
-        someAccount.add(new BankAccount("Ed", 230, "hyena", false, false));
-        return someAccount;
+        if (this.myAccounts == null) {
+            ArrayList<BankAccount> someAccount = new ArrayList<>();
+            someAccount.add(new BankAccount("Simba", 2000, "lion", true, false));
+            someAccount.add(new BankAccount("Scar", 5000, "lion", false, true));
+            someAccount.add(new BankAccount("Rafiki", 1300, "mandrill", false, false));
+            someAccount.add(new BankAccount("Ed", 230, "hyena", false, false));
+            this.myAccounts = someAccount;
+        }
+        return this.myAccounts;
     }
 
     @GetMapping(value="/listaccounts")
@@ -42,6 +46,7 @@ public class ListOfAccounts {
                     temp.balance += 10;
                 }
                 someAccount.set(i, temp);
+                myAccounts.set(i, temp);
             }
         }
         model.addAttribute("someaccounts", someAccount);
