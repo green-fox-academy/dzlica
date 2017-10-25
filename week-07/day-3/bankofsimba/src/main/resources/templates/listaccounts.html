@@ -1,32 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>List of accounts</title>
-    <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-<h1>Bank of Simba</h1>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:form="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>List of accounts</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h1>Bank of Simba</h1>
 
-<table>
-    <tr>
-        <th>Index</th>
-        <th>Name</th>
-        <th>Balance</th>
-        <th>Currency</th>
-        <th>Animal Type</th>
-        <th>King</th>
-        <th>Bad</th>
-    </tr>
-    <tr th:style ="${someaccount.king} == true ? 'color: red'" th:each="someaccount,iterStat : ${someaccounts}">
-        <td th:text="${iterStat.count}"></td>
-        <td th:text="${someaccount.name}"></td>
-        <td th:text="${#numbers.formatDecimal(someaccount.balance, 0, 2)}"></td>
-        <td th:text="${someaccount.currency}"></td>
-        <td th:text="${someaccount.animalType}"></td>
-        <td th:text="${someaccount.king} == true ? 'He is the king' : 'Not king' "></td>
-        <td th:text="${someaccount.bad} == true ? 'Bad guy' : 'Good one' "></td>
-    </tr>
-</table>
-</body>
+        <table>
+            <tr>
+                <th>Index</th>
+                <th>Name</th>
+                <th>Balance</th>
+                <th>Currency</th>
+                <th>Animal Type</th>
+                <th>King</th>
+                <th>Bad</th>
+            </tr>
+            <tr th:style ="${someaccount.king} == true ? 'color: red'" th:each="someaccount,iterStat : ${someaccounts}">
+                <td th:text="${iterStat.count}"></td>
+                <td th:text="${someaccount.name}"></td>
+                <td th:text="${#numbers.formatDecimal(someaccount.balance, 0, 2)}"></td>
+                <td th:text="${someaccount.currency}"></td>
+                <td th:text="${someaccount.animalType}"></td>
+                <td th:text="${someaccount.king} == true ? 'He is the king' : 'Not king' "></td>
+                <td th:text="${someaccount.bad} == true ? 'Bad guy' : 'Good one' "></td>
+            </tr>
+        </table>
+    </body>
 </html>

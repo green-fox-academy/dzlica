@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:form="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Give money to animals</title>
+</head>
+<body><form:form method="post" action="save">
+    <table >
+        <tr>
+            <td><form:label path="name"></form:label></td>
+            <td><form:input path="name"/></td>
+            <p>Name: <input type="text" th:field="*{name}" /></p>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Give me the money" /></td>
+        </tr>
+    </table>
+</form:form>
+<td th:text="${name}"></td>
+<td th:text="${#numbers.formatDecimal(balance, 0, 2)}"></td>
+</body>
+</html>
