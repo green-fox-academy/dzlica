@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>List of accounts</title>
+</head>
+<body>
+<h1>Bank of Simba</h1>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Balance</th>
+        <th>Currency</th>
+        <th>Animal Type</th>
+    </tr>
+    <tr th:each="someaccount : ${someaccounts}">
+        <td th:text="${someaccount.name}"></td>
+        <td th:text="${#numbers.formatDecimal(someaccount.balance, 0, 2)}"></td>
+        <td th:text="${someaccount.currency}"></td>
+        <td th:text="${someaccount.animalType}"></td>
+    </tr>
+</table>
+</body>
+</html>
