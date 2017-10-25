@@ -23,10 +23,9 @@
         <td th:text="${#numbers.formatDecimal(someaccount.balance, 0, 2)}"></td>
         <td th:text="${someaccount.currency}"></td>
         <td th:text="${someaccount.animalType}"></td>
-        <td th:if="${someaccount.king == true}" th:style="'color: red;'">He is the king</td>
-        <td th:if="${someaccount.king == false}">Not king</td>
-        <td th:if="${someaccount.bad == true} ">Bad</td>
-        <td th:if="${someaccount.bad == false} ">Good</td>
+        <td th:text="${someaccount.king} == true ? 'He is the king' : 'Not king' "></td>
+        <td th:text="${someaccount.bad} == true ? 'Bad guy' : 'Good one' "></td>
+
     </tr>
 </table>
 </body>
