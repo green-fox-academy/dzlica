@@ -1,0 +1,19 @@
+body {
+    background: yellow;
+    font-family: Montserrat;
+    background-image: url("lionking.jpg");
+}
+
+table {
+    width: 700px;
+    border: solid 2px blue;
+    font-size: 20px;
+    color: purple;
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    color: deeppink;
+    font-style: oblique;
+}
