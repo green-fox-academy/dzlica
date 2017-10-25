@@ -8,14 +8,24 @@ public class BankAccount {
     public String animalType;
     public String currency;
     public boolean king;
+    public boolean bad;
 
 
-    public BankAccount(String name, int balance, String animalType, boolean king) {
+    public BankAccount(String name, int balance, String animalType, boolean king, boolean bad) {
         this.name = name;
         this.balance = balance;
         this.animalType = animalType;
         this.currency = "Zebra";
         this.king = king;
+        this.bad = bad;
+    }
+
+    public boolean isBad() {
+        return bad;
+    }
+
+    public void setBad(boolean bad) {
+        this.bad = bad;
     }
 
     public boolean isKing() {

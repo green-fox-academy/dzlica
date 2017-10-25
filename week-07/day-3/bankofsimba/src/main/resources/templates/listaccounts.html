@@ -15,6 +15,7 @@
         <th>Currency</th>
         <th>Animal Type</th>
         <th>King</th>
+        <th>Bad</th>
     </tr>
     <tr th:style ="${someaccount.king} == true ? 'color: red'" th:each="someaccount,iterStat : ${someaccounts}">
         <td th:text="${iterStat.count}"></td>
@@ -22,7 +23,10 @@
         <td th:text="${#numbers.formatDecimal(someaccount.balance, 0, 2)}"></td>
         <td th:text="${someaccount.currency}"></td>
         <td th:text="${someaccount.animalType}"></td>
-        <td th:if ="${someaccount.king == true}" th:style="'color: red;'">He is the king</td>
+        <td th:if="${someaccount.king == true}" th:style="'color: red;'">He is the king</td>
+        <td th:if="${someaccount.king == false}">Not king</td>
+        <td th:if="${someaccount.bad == true} ">Bad</td>
+        <td th:if="${someaccount.bad == false} ">Good</td>
     </tr>
 </table>
 </body>

@@ -11,7 +11,7 @@ public class Exercise1 {
 
     @RequestMapping(value="bankofsimba")
     public String accounts(Model model) {
-        BankAccount myAccount = new BankAccount("Simba", 2000, "lion", true);
+        BankAccount myAccount = new BankAccount("Simba", 2000, "lion", true, true);
         model.addAttribute("name", myAccount.name);
         model.addAttribute("balance", myAccount.balance);
         model.addAttribute("animalType", myAccount.animalType);
