@@ -14,13 +14,15 @@
         <th>Balance</th>
         <th>Currency</th>
         <th>Animal Type</th>
+        <th>King</th>
     </tr>
-    <tr th:each="someaccount,iterStat : ${someaccounts}">
+    <tr th:style ="${someaccount.king} == true ? 'color: red'" th:each="someaccount,iterStat : ${someaccounts}">
         <td th:text="${iterStat.count}"></td>
         <td th:text="${someaccount.name}"></td>
         <td th:text="${#numbers.formatDecimal(someaccount.balance, 0, 2)}"></td>
         <td th:text="${someaccount.currency}"></td>
         <td th:text="${someaccount.animalType}"></td>
+        <td th:if ="${someaccount.king == true}" th:style="'color: red;'">He is the king</td>
     </tr>
 </table>
 </body>

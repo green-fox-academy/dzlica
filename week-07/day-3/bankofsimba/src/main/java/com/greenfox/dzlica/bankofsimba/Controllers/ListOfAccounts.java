@@ -13,10 +13,10 @@ public class ListOfAccounts {
     @RequestMapping(value="/listaccounts")
     public String listaccounts(Model model) {
         ArrayList<BankAccount> someAccount = new ArrayList<>();
-        someAccount.add(new BankAccount("Simba", 2000, "lion"));
-        someAccount.add(new BankAccount("Scar", 5000, "lion"));
-        someAccount.add(new BankAccount("Rafiki", 1300, "mandrill"));
-        someAccount.add(new BankAccount("Ed", 230, "hyena"));
+        someAccount.add(new BankAccount("Simba", 2000, "lion", true));
+        someAccount.add(new BankAccount("Scar", 5000, "lion", false));
+        someAccount.add(new BankAccount("Rafiki", 1300, "mandrill", false));
+        someAccount.add(new BankAccount("Ed", 230, "hyena", false));
         model.addAttribute("someaccounts", someAccount);
         return "listaccounts";
     }
