@@ -27,5 +27,11 @@
                 <td th:text="${someaccount.bad} == true ? 'Bad guy' : 'Good one' "></td>
             </tr>
         </table>
+
+        <form action="#" th:action="@{/listaccounts}" th:object="${formaccount}" method="post">
+            <p>Name: <input type="text" name="index" th:field="*{name}" /></p>
+            <p><input type="submit" value="Give me money!" /> </p>
+        </form>
+
     </body>
 </html>

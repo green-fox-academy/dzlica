@@ -10,6 +10,9 @@ public class BankAccount {
     public boolean king;
     public boolean bad;
 
+    public BankAccount() {
+        this.name = "";
+    }
 
     public BankAccount(String name, int balance, String animalType, boolean king, boolean bad) {
         this.name = name;
