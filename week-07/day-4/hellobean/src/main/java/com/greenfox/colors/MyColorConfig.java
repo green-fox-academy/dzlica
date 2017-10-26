@@ -1,14 +1,17 @@
-package com.example.dzlica.hellobean;
+package com.greenfox.colors;
+
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-
 @Configuration
-public class HelloWorldConfig {
+public class MyColorConfig {
 
     @Bean
-    public HelloWorld helloWorld() {
-        return new HelloWorld();
+    public MyColor redcolor() {
+        return new RedColor();
     }
+
+
+
 }
