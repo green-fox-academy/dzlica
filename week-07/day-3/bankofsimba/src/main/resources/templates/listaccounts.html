@@ -13,23 +13,23 @@
             <th>Name</th>
             <th>Balance</th>
             <th>Currency</th>
-            <th>Animal Type</th>
-            <th>King</th>
-            <th>Bad</th>
+            <th>Animal</th>
+            <th>Royalty</th>
+            <th>Is friend?</th>
         </tr>
-        <tr th:style ="${someaccount.king} == true ? 'color: red'" th:each="someaccount,iterStat : ${someaccounts}">
+        <tr th:style ="${someaccount.king} == true ? 'color: orange'" th:each="someaccount,iterStat : ${someaccounts}">
             <td th:text="${iterStat.count}"></td>
             <td th:text="${someaccount.name}"></td>
             <td th:text="${#numbers.formatDecimal(someaccount.balance, 0, 2)}"></td>
             <td th:text="${someaccount.currency}"></td>
             <td th:text="${someaccount.animalType}"></td>
-            <td th:text="${someaccount.king} == true ? 'He is the king' : 'Not king' "></td>
-            <td th:text="${someaccount.bad} == true ? 'Bad guy' : 'Good one' "></td>
+            <td th:text="${someaccount.king} == true ? 'The king' : '-' "></td>
+            <td th:text="${someaccount.bad} == true ? 'Yes' : 'No' "></td>
         </tr>
     </table>
-
+    <div>
         <a th:href="@{/givemoney}">Give me money!</a>
         <a th:href="@{/addaccount}">Add new account</a>
-
+    </div>
     </body>
 </html>

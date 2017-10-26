@@ -3,10 +3,13 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>List of accounts</title>
     <title>Give me money!</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <form action="#" th:action="@{/givemoney}" th:object="${formaccount}" method="post">
+    <p>If friend: raise with 10 Ants</p>
+    <p>If enemy: looses with 50 Ants</p>
     <p>Name: <input type="text" name="index" th:field="*{name}" /></p>
     <p><input type="submit" value="Give me money!" /> </p>
 </form>

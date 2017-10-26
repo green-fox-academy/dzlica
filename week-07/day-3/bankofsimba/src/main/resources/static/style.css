@@ -1,26 +1,38 @@
 body {
-    font-family: Montserrat;
-    background-image: url("lionking.jpg");
+    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+    background-image: url("scarbank.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
 }
 
 table {
     align-content: center;
-    background: yellow;
-    width: 700px;
-    border: solid 2px blue;
-    font-size: 20px;
-    color: purple;
+    background-color: mediumseagreen;
+    width: 850px;
+    border: solid 2px darkgreen;
+    font-size: 25px;
+    color: yellow;
     padding: 10px;
     margin: 30px;
     text-align: center;
+    line-height: 30px;
 }
 
 form {
-    background: yellow;
+    background: mediumseagreen;
     border: solid 2px blue;
-    width: 200px;
+    width: 250px;
     margin: 30px;
+    padding: 10px;
+    color: yellow;
+    font-size: large;
+}
+
+div {
+    font-size: x-large;
+    font-weight: 300;
+    margin: 30px;
+    list-style: lower-greek;
+    text-overflow: ellipsis;
     padding: 10px;
 }

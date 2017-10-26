@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8" />
     <title>Adding account</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <form action="#" th:action="@{/addaccount}" th:object="${formaccount}" method="post">
+    <p>Here you can put the new account</p>
     <p>Name: <input type="text" th:field="*{name}" /></p>
     <p>Balance: <input type="text" th:field="*{balance}" /></p>
     <p>Animal: <input type="text" th:field="*{animalType}" /></p>
