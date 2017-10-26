@@ -20,7 +20,7 @@ public class ListOfAccounts {
             someAccount.add(new BankAccount("Simba", 2000, "lion", true, false));
             someAccount.add(new BankAccount("Scar", 5000, "lion", false, true));
             someAccount.add(new BankAccount("Rafiki", 1300, "mandrill", false, false));
-            someAccount.add(new BankAccount("Ed", 230, "hyena", false, false));
+            someAccount.add(new BankAccount("Ed", 230, "hyena", false, true));
             this.myAccounts = someAccount;
         }
         return this.myAccounts;
