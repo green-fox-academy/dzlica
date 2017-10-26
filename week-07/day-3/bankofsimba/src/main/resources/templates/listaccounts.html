@@ -6,31 +6,30 @@
     </head>
     <body>
 
-        <table>
-            <tr>
-                <th>Index</th>
-                <th>Name</th>
-                <th>Balance</th>
-                <th>Currency</th>
-                <th>Animal Type</th>
-                <th>King</th>
-                <th>Bad</th>
-            </tr>
-            <tr th:style ="${someaccount.king} == true ? 'color: red'" th:each="someaccount,iterStat : ${someaccounts}">
-                <td th:text="${iterStat.count}"></td>
-                <td th:text="${someaccount.name}"></td>
-                <td th:text="${#numbers.formatDecimal(someaccount.balance, 0, 2)}"></td>
-                <td th:text="${someaccount.currency}"></td>
-                <td th:text="${someaccount.animalType}"></td>
-                <td th:text="${someaccount.king} == true ? 'He is the king' : 'Not king' "></td>
-                <td th:text="${someaccount.bad} == true ? 'Bad guy' : 'Good one' "></td>
-            </tr>
-        </table>
 
-        <form action="#" th:action="@{/listaccounts}" th:object="${formaccount}" method="post">
-            <p>Name: <input type="text" name="index" th:field="*{name}" /></p>
-            <p><input type="submit" value="Give me money!" /> </p>
-        </form>
+    <table>
+        <tr>
+            <th>Index</th>
+            <th>Name</th>
+            <th>Balance</th>
+            <th>Currency</th>
+            <th>Animal Type</th>
+            <th>King</th>
+            <th>Bad</th>
+        </tr>
+        <tr th:style ="${someaccount.king} == true ? 'color: red'" th:each="someaccount,iterStat : ${someaccounts}">
+            <td th:text="${iterStat.count}"></td>
+            <td th:text="${someaccount.name}"></td>
+            <td th:text="${#numbers.formatDecimal(someaccount.balance, 0, 2)}"></td>
+            <td th:text="${someaccount.currency}"></td>
+            <td th:text="${someaccount.animalType}"></td>
+            <td th:text="${someaccount.king} == true ? 'He is the king' : 'Not king' "></td>
+            <td th:text="${someaccount.bad} == true ? 'Bad guy' : 'Good one' "></td>
+        </tr>
+    </table>
+
+        <a th:href="@{/givemoney}">Give me money!</a>
+        <a th:href="@{/addaccount}">Add new account</a>
 
     </body>
 </html>
