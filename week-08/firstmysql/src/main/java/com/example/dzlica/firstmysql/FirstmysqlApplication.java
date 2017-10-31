@@ -19,6 +19,11 @@ public class FirstmysqlApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		todoRepo.save(new Todo("I have to learn Object Relational Mapping"));
+		todoRepo.save(new Todo("Make dinner", true, false));
+        todoRepo.save(new Todo("Carve pumpkin", true, false));
+        todoRepo.save(new Todo("Make pumpkinsoup", false, false));
+        todoRepo.save(new Todo("Play lego", true, false));
+        todoRepo.save(new Todo("Watch Star Trek", false, false));
+        todoRepo.save(new Todo("Code", false, false));
 	}
 }

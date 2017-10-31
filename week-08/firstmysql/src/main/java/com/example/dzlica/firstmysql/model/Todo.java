@@ -16,10 +16,10 @@ public class Todo {
     boolean isUrgent;
     boolean isDone;
 
-    public Todo(String s) {
+    public Todo(String s, boolean u, boolean d) {
         this.title = s;
-        this.isUrgent = false;
-        this.isDone = false;
+        this.isUrgent = u;
+        this.isDone = d;
     }
 
     public Todo() {
@@ -29,8 +29,8 @@ public class Todo {
     public Todo(int id, String title, boolean isUrgent, boolean isDone) {
         this.id = id;
         this.title = title;
-        this.isUrgent = false;
-        this.isDone = false;
+        this.isUrgent = isUrgent;
+        this.isDone = isDone;
     }
 
 

@@ -6,9 +6,19 @@
 </head>
 <body>
 <h1>'Todos for today'</h1>
-<ol th:each="todo:${todos}">
-    <li seq="${todo.id}" th:text="${todo}"></li>
-
-</ol>
+<table border="solid blue">
+    <tr>
+        <th>ID</th>
+        <th>Todo</th>
+        <th>Urgent</th>
+        <th>Done</th>
+    </tr>
+<tr th:each="todo:${todos}">
+    <td seq="${todo.id}" ></td>
+    <td th:text="${todo.title}"></td>
+    <td th:text="${todo.isUrgent()}"></td>
+    <td th:text="${todo.isDone()}"></td>
+</tr>
+</table>
 </body>
 </html>
