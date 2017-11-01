@@ -13,13 +13,13 @@ public class Todo {
     int id;
 
     String title;
-    boolean isUrgent;
-    boolean isDone;
+    boolean urgent;
+    boolean done;
 
     public Todo(String s, boolean u, boolean d) {
         this.title = s;
-        this.isUrgent = u;
-        this.isDone = d;
+        this.urgent = u;
+        this.done = d;
     }
 
     public Todo() {
@@ -29,9 +29,10 @@ public class Todo {
     public Todo(int id, String title, boolean isUrgent, boolean isDone) {
         this.id = id;
         this.title = title;
-        this.isUrgent = isUrgent;
-        this.isDone = isDone;
+        this.urgent = urgent;
+        this.done = done;
     }
+
 
 
     public int getId() {
@@ -51,19 +52,19 @@ public class Todo {
     }
 
     public boolean isUrgent() {
-        return isUrgent;
+        return urgent;
     }
 
     public void setUrgent(boolean urgent) {
-        isUrgent = urgent;
+        this.urgent = urgent;
     }
 
     public boolean isDone() {
-        return isDone;
+        return done;
     }
 
     public void setDone(boolean done) {
-        isDone = done;
+        this.done = done;
     }
 
     @Override

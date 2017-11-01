@@ -15,20 +15,27 @@ public class TodoController {
     TodoRepo todoRepo;
 
     @RequestMapping({"/", "/list"})
-    public String list(Model model) {
-        model.addAttribute("todos", todoRepo.findAll());
+    public String list(Model model, @RequestParam (required = false) boolean isActive) {
+        if (!isActive) {
+            model.addAttribute("todos", todoRepo.findAll());
+        }
+        if (isActive) {
+            model.addAttribute("todos", todoRepo.findAllByDoneIsFalse());
+        }
+
         return "todo";
     }
 
     @GetMapping(value="/add")
-    public String addTodo(@RequestParam String title, @RequestParam boolean isUrgent, @RequestParam boolean isDone) {
-        todoRepo.save(new Todo(title, isUrgent, isDone));
+    public String addTodo(Model model) {
+        model.addAttribute("addtodo", new Todo());
         return "add";
     }
 
     @PostMapping("/add")
-    public String addTodo(@ModelAttribute TodoRepo todoRepo, Model model) {
-        model.addAttribute("added", todoRepo.findAll());
+    public String postTodo(@ModelAttribute Todo todo, Model model) {
+        todoRepo.save(todo);
+        model.addAttribute("todos", todoRepo.findAll());
         return "todo";
     }
 
