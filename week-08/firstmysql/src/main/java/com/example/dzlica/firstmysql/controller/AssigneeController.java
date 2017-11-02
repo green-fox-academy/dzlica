@@ -1,6 +1,7 @@
 package com.example.dzlica.firstmysql.controller;
 
 import com.example.dzlica.firstmysql.model.Assignee;
+import com.example.dzlica.firstmysql.model.Todo;
 import com.example.dzlica.firstmysql.repositories.AssigneeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,5 +31,18 @@ public class AssigneeController {
         assigneeRepo.save(assignee);
         return "redirect:/assignee/list";
 
+    }
+
+    @GetMapping(value="/addassignee")
+    public String addassignee(Model model) {
+        model.addAttribute("addassignee", new Assignee());
+        return "addassignee";
+    }
+
+    @PostMapping("/addassignee")
+    public String postassignee(@ModelAttribute Assignee assignee, Model model) {
+        assigneeRepo.save(assignee);
+        model.addAttribute("assignees", assigneeRepo.findAll());
+        return "assignee";
     }
 }
