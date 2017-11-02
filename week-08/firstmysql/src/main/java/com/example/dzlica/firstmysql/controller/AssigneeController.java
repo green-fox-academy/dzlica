@@ -33,6 +33,12 @@ public class AssigneeController {
 
     }
 
+    @RequestMapping("/{id}/deleteassignee")
+    public String delete(@PathVariable long id) {
+        assigneeRepo.delete(id);
+        return "redirect:/assignee/list";
+    }
+
     @GetMapping(value="/addassignee")
     public String addassignee(Model model) {
         model.addAttribute("addassignee", new Assignee());
