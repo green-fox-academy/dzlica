@@ -1,6 +1,7 @@
 package com.example.dzlica.firstmysql.controller;
 
 import com.example.dzlica.firstmysql.model.Todo;
+import com.example.dzlica.firstmysql.repositories.AssigneeRepo;
 import com.example.dzlica.firstmysql.repositories.TodoRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,10 +15,14 @@ public class TodoController {
     @Autowired
     TodoRepo todoRepo;
 
+    @Autowired
+    AssigneeRepo assigneeRepo;
+
     @RequestMapping({"/", "/list"})
     public String list(Model model, @RequestParam (required = false) boolean isActive, @RequestParam (required = false) String search) {
         if (!isActive) {
             model.addAttribute("todos", todoRepo.findAll());
+            model.addAttribute("assignees", assigneeRepo.findAll());
         }
         if (isActive) {
             model.addAttribute("todos", todoRepo.findAllByDoneIsFalse());
@@ -25,6 +30,7 @@ public class TodoController {
         if (search != null) {
             model.addAttribute("todos", todoRepo.findAllByTitleIsLike("%" + search + "%"));
         }
+
 
         return "todo";
     }
