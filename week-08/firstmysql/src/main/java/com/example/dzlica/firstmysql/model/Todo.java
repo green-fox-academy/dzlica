@@ -1,9 +1,6 @@
 package com.example.dzlica.firstmysql.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Todo {
@@ -15,6 +12,9 @@ public class Todo {
     String title;
     boolean urgent;
     boolean done;
+
+    @ManyToOne
+    Assignee assignee;
 
     public Todo(String s, boolean u, boolean d) {
         this.title = s;
