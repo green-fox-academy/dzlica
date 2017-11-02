@@ -15,12 +15,15 @@ public class TodoController {
     TodoRepo todoRepo;
 
     @RequestMapping({"/", "/list"})
-    public String list(Model model, @RequestParam (required = false) boolean isActive) {
+    public String list(Model model, @RequestParam (required = false) boolean isActive, @RequestParam (required = false) String search) {
         if (!isActive) {
             model.addAttribute("todos", todoRepo.findAll());
         }
         if (isActive) {
             model.addAttribute("todos", todoRepo.findAllByDoneIsFalse());
+        }
+        if (search != null) {
+            model.addAttribute("todos", todoRepo.findAllByTitleIsLike("%" + search + "%"));
         }
 
         return "todo";
@@ -52,10 +55,9 @@ public class TodoController {
     }
 
     @PostMapping("/{id}/edit")
-    public String editPost(@ModelAttribute Todo todo, Model model, long id) {
+    public String editPost(@ModelAttribute Todo todo) {
         todoRepo.save(todo);
         return "redirect:/todo/list";
     }
-
 
 }

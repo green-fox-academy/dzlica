@@ -7,7 +7,6 @@
 <body>
 <table border="solid blue">
     <tr>
-        <th>ID</th>
         <th>Todo</th>
         <th>Urgent</th>
         <th>Done</th>
@@ -20,5 +19,6 @@
     <input type="checkbox" th:field="*{done}" />
     <button type="submit" value="Submit">Submit</button>
 </form>
+<a th:href="@{/todo/list}" th:text="'Cancel'" />
 </body>
 </html>

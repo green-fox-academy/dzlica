@@ -5,6 +5,13 @@
     <title>Lists todos</title>
 </head>
 <body>
+<a th:href="@{/todo/add}" th:text="'Add todos'" />
+<br/>
+<form th:action="@{/todo/list}" th:object="${todos}" method="post">
+    <input type="search" />
+    <button type="submit" value="Submit">Search</button>
+</form>
+<br/>
 <h1>'Todos for today'</h1>
 <table border="solid blue">
     <tr>
