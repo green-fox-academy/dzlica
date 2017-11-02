@@ -1,5 +1,6 @@
 package com.example.dzlica.firstmysql.controller;
 
+import com.example.dzlica.firstmysql.model.Assignee;
 import com.example.dzlica.firstmysql.model.Todo;
 import com.example.dzlica.firstmysql.repositories.AssigneeRepo;
 import com.example.dzlica.firstmysql.repositories.TodoRepo;
@@ -57,12 +58,14 @@ public class TodoController {
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable long id) {
         model.addAttribute("edittodo", todoRepo.findOne(id));
+        //model.addAttribute("edittodo", assigneeRepo.findOne(id));
         return "/edit";
     }
 
     @PostMapping("/{id}/edit")
-    public String editPost(@ModelAttribute Todo todo) {
+    public String editPost(@ModelAttribute Todo todo, @ModelAttribute Assignee assignee) {
         todoRepo.save(todo);
+        //assigneeRepo.save(assignee);
         return "redirect:/todo/list";
     }
 

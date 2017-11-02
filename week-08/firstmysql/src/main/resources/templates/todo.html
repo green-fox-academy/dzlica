@@ -5,9 +5,11 @@
     <title>Lists todos</title>
 </head>
 <body>
+<a th:href="@{/todo/list}" th:text="'Home'" />
+<p></p>
 <a th:href="@{/todo/add}" th:text="'Add todos'" />
 <p></p>
-<a th:href="@{/todo/list}" th:text="'Home'" />
+<a th:href="@{/assignee/}" th:text="'Assignees'" />
 <p></p>
 <form th:action="@{/todo/list}" th:object="${search}" method="get">
     <input type="search" name="search" />
@@ -39,11 +41,13 @@
         <th>ID</th>
         <th>Name</th>
         <th>Email</th>
+        <th>Edit</th>
     </tr>
     <tr th:each="assignee:${assignees}">
         <td th:text="${assignee.id}" ></td>
         <td th:text="${assignee.name}"></td>
         <td th:text="${assignee.email}"></td>
+        <td><a th:href="@{/todo/{id}/edit(id=${assignee.id})}" >Edit</a></td>
     </tr>
 </table>
 </body>
