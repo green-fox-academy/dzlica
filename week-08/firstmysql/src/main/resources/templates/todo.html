@@ -6,9 +6,11 @@
 </head>
 <body>
 <a th:href="@{/todo/add}" th:text="'Add todos'" />
-<br/>
-<form th:action="@{/todo/list}" th:object="${todos}" method="post">
-    <input type="search" />
+<p></p>
+<a th:href="@{/todo/list}" th:text="'Home'" />
+<p></p>
+<form th:action="@{/todo/list}" th:object="${search}" method="get">
+    <input type="search" name="search" />
     <button type="submit" value="Submit">Search</button>
 </form>
 <br/>
