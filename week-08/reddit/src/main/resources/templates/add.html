@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Adding posts</title>
+</head>
+<body>
+<form th:action="@{/reddit/add}" th:object="${addpost}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    <input type="text" th:field="*{title}" th:value="${title}" />
+    <button type="submit" value="Submit">Submit</button>
+</form>
+<a th:href="@{/reddit/list}" th:text="'Cancel'" />
+</body>
+</html>

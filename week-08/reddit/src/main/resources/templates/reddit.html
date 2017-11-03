@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf">
+<head>
+    <meta charset="UTF-8" />
+    <title>Reddit post</title>
+</head>
+<body>
+<table border="solid blue">
+    <tr>
+        <th>Id</th>
+        <th>Score</th>
+        <th>Content</th>
+    </tr>
+    <tr th:each="post:${posts}">
+        <td th:text="${post.id}"></td>
+        <td th:text="${post.score}" ></td>
+        <td th:text="${post.title}"></td>
+    </tr>
+</table>
+</body>
+</html>
