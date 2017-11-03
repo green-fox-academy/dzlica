@@ -5,15 +5,16 @@
     <title>Editing todos</title>
 </head>
 <body>
+
     <p>Editing todos and assignees</p>
     <form th:action="@{/todo/{id}/edit(id=${edittodo.id})}" th:object="${edittodo}" method="post">
         <input type="hidden" th:field="*{id}" />
         <input type="text" th:field="*{title}" th:value="${title}" />
         <input type="checkbox" th:field="*{urgent}" />
         <input type="checkbox" th:field="*{done}" />
-        <select id="assignee.id" name="assignee.name">
-            <option value="NONE">--- Select Assignee---</option>
-            <option th:each="assignee : ${assignees}" th:value="${assignee}" th:text="${assignee}"></option>
+        <select th:field="*{assignee}">
+
+            <option th:each="assignee : ${assignees}" th:value="${assignee.id}" th:text="${assignee.name}"></option>
         </select>
         <button type="submit" value="Submit">Submit</button>
     </form>

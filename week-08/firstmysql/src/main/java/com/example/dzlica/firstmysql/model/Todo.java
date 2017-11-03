@@ -13,7 +13,8 @@ public class Todo {
     boolean urgent;
     boolean done;
 
-    @ManyToOne (cascade =CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "assignee_id")
     Assignee assignee;
 
     public Todo(String s, boolean u, boolean d) {

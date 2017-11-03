@@ -1,9 +1,7 @@
 package com.example.dzlica.firstmysql.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Assignee {
@@ -11,6 +9,11 @@ public class Assignee {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     long id;
+
+    @OneToMany (cascade =CascadeType.ALL, mappedBy = "assignee", orphanRemoval = true)
+    List<Todo> lottodos;
+
+
 
     String name;
     String email;
@@ -52,6 +55,14 @@ public class Assignee {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Todo> getLottodos() {
+        return lottodos;
+    }
+
+    public void setLottodos(List<Todo> lottodos) {
+        this.lottodos = lottodos;
     }
 
     @Override
