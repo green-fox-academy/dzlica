@@ -13,7 +13,7 @@ public class Todo {
     boolean urgent;
     boolean done;
 
-    @ManyToOne
+    @ManyToOne (cascade =CascadeType.ALL)
     Assignee assignee;
 
     public Todo(String s, boolean u, boolean d) {
@@ -72,5 +72,12 @@ public class Todo {
         return title;
     }
 
+    public Assignee getAssignee() {
+        return assignee;
+    }
+
+    public void setAssignee(Assignee assignee) {
+        this.assignee = assignee;
+    }
 
 }

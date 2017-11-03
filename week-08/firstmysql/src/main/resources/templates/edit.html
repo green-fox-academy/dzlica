@@ -11,7 +11,10 @@
         <input type="text" th:field="*{title}" th:value="${title}" />
         <input type="checkbox" th:field="*{urgent}" />
         <input type="checkbox" th:field="*{done}" />
-        <input type="text" th:field="*{name}" th:value="${name}" />
+        <select id="assignee.id" name="assignee.name">
+            <option value="NONE">--- Select Assignee---</option>
+            <option th:each="assignee : ${assignees}" th:value="${assignee}" th:text="${assignee}"></option>
+        </select>
         <button type="submit" value="Submit">Submit</button>
     </form>
 </body>

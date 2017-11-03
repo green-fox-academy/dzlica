@@ -25,6 +25,7 @@
         <th>Done</th>
         <th>Delete</th>
         <th>Edit</th>
+        <th>Assignee</th>
     </tr>
 <tr th:each="todo:${todos}">
     <td th:text="${todo.id}" ></td>
@@ -33,6 +34,7 @@
     <td th:text="${todo.isDone()}"></td>
     <td><a th:href="@{/todo/{id}/delete(id=${todo.id})}" >Delete</a></td>
     <td><a th:href="@{/todo/{id}/edit(id=${todo.id})}" >Edit</a></td>
+    <td th:text="${todo.assignee}"></td>
 </tr>
 </table>
 </body>
