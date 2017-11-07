@@ -1,8 +1,7 @@
 package com.greenfox.dzlica.restex.controllers;
 
-import com.greenfox.dzlica.restex.Model.AppendA;
-import com.greenfox.dzlica.restex.Model.Doubling;
-import com.greenfox.dzlica.restex.Model.Greeter;
+import com.greenfox.dzlica.restex.Model.*;
+import com.sun.org.apache.xerces.internal.util.DOMUtil;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +23,12 @@ public class RController {
     @GetMapping("/appenda/{appendable}")
     public AppendA appendParam(@PathVariable(value="appendable") String appendable) {
         return new AppendA(appendable);
+    }
+
+    @RequestMapping(value = "/dountil/{what}", method = RequestMethod.POST)
+    public DoUntil dountil(@PathVariable String what, @RequestBody Until until) {
+        DoUntil doUntil = new DoUntil(until.getUntil(), what);
+        return doUntil;
     }
 
     @ExceptionHandler(MissingServletRequestParameterException.class)
