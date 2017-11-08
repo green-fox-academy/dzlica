@@ -1,16 +1,17 @@
 package com.greenfox.dzlica.restex.Model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ArrayHandler {
 
     String what;
-    List<Integer> numbers = new ArrayList<>();
+    int[] numbers;
 
     public ArrayHandler() {
     }
 
+    public ArrayHandler(String what, int[] numbers) {
+        this.what = what;
+        this.numbers = numbers;
+    }
 
     public String getWhat() {
         return what;
@@ -20,11 +21,11 @@ public class ArrayHandler {
         this.what = what;
     }
 
-    public List<Integer> getNumbers() {
+    public int[] getNumbers() {
         return numbers;
     }
 
-    public void setNumbers(List<Integer> numbers) {
+    public void setNumbers(int[] numbers) {
         this.numbers = numbers;
     }
 }

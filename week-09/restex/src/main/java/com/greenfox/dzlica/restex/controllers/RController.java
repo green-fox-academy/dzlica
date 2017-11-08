@@ -45,7 +45,18 @@ public class RController {
         return new AppendA(appendable + "a");
     }
 
+    @PostMapping("/dountil/{what}")
+    public Object dountilParam(@PathVariable (value="what") String what, @RequestBody Until until) {
+        if (until.getUntil() == 0) {
+            return new Hiba("Please provide a number!");
+        }
+        return new DoUntil(what, until.getUntil());
+    }
 
+    @PostMapping("/arrays")
+    public Object arraysParam(@RequestBody ArrayHandler arrayHandler) {
+        return new ArrayMethods(arrayHandler.getWhat(), arrayHandler.getNumbers());
+    }
 
 //    @GetMapping("/greeter")
 //    public Greeter greetParam(@RequestParam("name") String name, @RequestParam("title") String title) {
@@ -57,11 +68,11 @@ public class RController {
 //        return new AppendA(appendable);
 //    }
 
-    @RequestMapping(value = "/dountil/{what}", method = RequestMethod.POST)
-    public DoUntil dountilParam(@PathVariable String what, @RequestBody Until until) {
-        DoUntil doUntil = new DoUntil(until.getUntil(), what);
-        return doUntil;
-    }
+//    @RequestMapping(value = "/dountil/{what}", method = RequestMethod.POST)
+//    public DoUntil dountilParam(@PathVariable String what, @RequestBody Until until) {
+//        DoUntil doUntil = new DoUntil(until.getUntil(), what);
+//        return doUntil;
+//    }
 
 //    @PostMapping("/arrays")
 //    public ArrayMethods arrayResult(@RequestBody ArrayHandler arrayHandler) {

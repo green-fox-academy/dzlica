@@ -4,7 +4,7 @@ public class DoUntil {
     String what;
     int result;
 
-    public DoUntil(int tokmasig, String what) {
+    public DoUntil(String what, int tokmasig) {
         this.what = what;
         if (what.equals("sum")) {
             int temp = 0;

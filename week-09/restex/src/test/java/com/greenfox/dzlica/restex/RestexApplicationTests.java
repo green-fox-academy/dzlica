@@ -97,4 +97,24 @@ public class RestexApplicationTests {
     }
 
 
+    @Test
+    public void dountilTestSum() throws Exception {
+        mockMvc.perform(post("/dountil/sum")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"until\": 5}"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(contentType))
+                .andExpect(jsonPath("$.result", is(15)));
+    }
+
+    @Test
+    public void dountilTestFActor() throws Exception {
+        mockMvc.perform(post("/dountil/factor")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"until\": 5}"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(contentType))
+                .andExpect(jsonPath("$.result", is(120)));
+    }
+
 }
