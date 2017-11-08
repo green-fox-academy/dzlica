@@ -1,10 +1,14 @@
 package com.greenfox.dzlica.restex.controllers;
 
-public class Error {
+public class Hiba {
 
     String error;
 
-    public Error() {
+    public Hiba() {
+    }
+
+    public Hiba(String error) {
+        this.error = error;
     }
 
     public String getError() {

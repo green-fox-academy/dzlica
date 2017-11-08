@@ -4,8 +4,11 @@ public class AppendA {
 
     String appended;
 
-    public AppendA(String appendable) {
-        this.appended = appendable + "a";
+    public AppendA() {
+    }
+
+    public AppendA(String appended) {
+        this.appended = appended;
     }
 
     public String getAppended() {

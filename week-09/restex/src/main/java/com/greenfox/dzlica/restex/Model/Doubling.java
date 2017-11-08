@@ -8,9 +8,9 @@ public class Doubling {
     public Doubling() {
     }
 
-    public Doubling(int received) {
+    public Doubling(int received, int result) {
         this.received = received;
-        this.result = received * 2;
+        this.result = result;
     }
 
 
